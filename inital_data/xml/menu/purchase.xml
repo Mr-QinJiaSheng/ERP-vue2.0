@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Menus>
+    <menu id="purchase">
+        <name>采购管理</name>
+        <parent></parent>
+        <icon>el-icon-menu</icon>
+        <group>purchaseman,purchasemanager</group>
+        <path>purchase</path>
+        <componentpath>common/Breadcrumb</componentpath>
+        <meta></meta>
+        <viewtype></viewtype>
+        <isbackground>true</isbackground>
+    </menu>
+    <menu id="purchase_order">
+        <name>采购订单</name>
+        <parent>purchase</parent>
+        <icon>el-icon-menu</icon>
+        <group>purchaseman,purchasemanager</group>
+        <path>purchase/order</path>
+        <!-- 下面有不同的视图，component使用中间件,仅传递router-view -->
+        <componentpath>common/MiddleRouterView</componentpath>
+        <meta></meta>
+        <viewtype>[
+            {"path":"purchase/order","componentpath":"purchase/order/list"}, 
+            {"path":"purchase/order/form/:id","componentpath":"purchase/order/form"},
+            {"path":"purchase/order/detail/:id","componentpath":"purchase/order/detail"}
+        ]</viewtype>
+        <isbackground>true</isbackground>
+    </menu>
+    <menu id="purchase_order_line">
+        <name>订单明细</name>
+        <parent>purchase</parent>
+        <icon>el-icon-menu</icon>
+        <group>purchaseman,purchasemanager</group>
+        <path>purchase/orderline</path>
+        <!-- 下面有不同的视图，component使用中间件,仅传递router-view -->
+        <componentpath>common/MiddleRouterView</componentpath>
+        <meta></meta>
+        <viewtype>[
+            {"path":"purchase/orderline","componentpath":"purchase/orderline/list"}, 
+            {"path":"purchase/orderline/form/:id","componentpath":"purchase/orderline/form"},
+            {"path":"purchase/orderline/detail/:id","componentpath":"purchase/orderline/detail"}
+        ]</viewtype>
+        <isbackground>true</isbackground>
+    </menu>
+
+
+   
+</Menus>

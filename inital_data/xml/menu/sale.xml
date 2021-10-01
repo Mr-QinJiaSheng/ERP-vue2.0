@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Menus>
+    <menu id="sale">
+        <name>销售管理</name>
+        <parent></parent>
+        <icon>el-icon-menu</icon>
+        <group>saleman,salemanager</group>
+        <path>sale</path>
+        <componentpath>common/Breadcrumb</componentpath>
+        <meta></meta>
+        <viewtype></viewtype>
+        <isbackground>true</isbackground>
+    </menu>
+    <menu id="sale_order">
+        <name>销售订单</name>
+        <parent>sale</parent>
+        <icon>el-icon-menu</icon>
+        <group>saleman,salemanager</group>
+        <path>sale/order</path>
+        <!-- 下面有不同的视图，component使用中间件,仅传递router-view -->
+        <componentpath>common/MiddleRouterView</componentpath>
+        <meta></meta>
+        <viewtype>[
+            {"path":"sale/order","componentpath":"sale/order/list"}, 
+            {"path":"sale/order/form/:id","componentpath":"sale/order/form"},
+            {"path":"sale/order/detail/:id","componentpath":"sale/order/detail"}
+        ]</viewtype>
+        <isbackground>true</isbackground>
+    </menu>
+    <menu id="sale_order_line">
+        <name>订单明细</name>
+        <parent>sale</parent>
+        <icon>el-icon-menu</icon>
+        <group>saleman,salemanager</group>
+        <path>sale/orderline</path>
+        <!-- 下面有不同的视图，component使用中间件,仅传递router-view -->
+        <componentpath>common/MiddleRouterView</componentpath>
+        <meta></meta>
+        <viewtype>[
+            {"path":"sale/orderline","componentpath":"sale/orderline/list"}, 
+            {"path":"sale/orderline/form/:id","componentpath":"sale/orderline/form"},
+            {"path":"sale/orderline/detail/:id","componentpath":"sale/orderline/detail"}
+        ]</viewtype>
+        <isbackground>true</isbackground>
+    </menu>
+    <menu id="customer">
+        <name>客户管理</name>
+        <parent>sale</parent>
+        <icon>el-icon-menu</icon>
+        <group>saleman,salemanager</group>
+        <path>partner/?customer=true</path>
+        <!-- 下面有不同的视图，component使用中间件,仅传递router-view -->
+        <componentpath>common/MiddleRouterView</componentpath>
+        <meta></meta>
+        <viewtype>[
+            {"path":"partner/?customer=true","componentpath":"partner/list"}, 
+            {"path":"partner/form/:id?customer=true","componentpath":"partner/form"},
+            {"path":"partner/detail/:id?customer=true","componentpath":"partner/detail"}
+        ]</viewtype>
+        <isbackground>true</isbackground>
+    </menu>
+</Menus>

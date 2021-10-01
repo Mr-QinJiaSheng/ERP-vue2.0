@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Menus>
+    <menu id="stock">
+        <name>仓库管理</name>
+        <parent></parent>
+        <icon>el-icon-menu</icon>
+        <group>stockman,stockmanager</group>
+        <path>stock</path>
+        <componentpath>common/Breadcrumb</componentpath>
+        <meta></meta>
+        <viewtype></viewtype>
+        <isbackground>true</isbackground>
+    </menu>
+    <menu id="stock_warehouse">
+        <name>仓库</name>
+        <parent>stock</parent>
+        <icon>el-icon-menu</icon>
+        <group>stockmanager</group>
+        <path>stock/warehouse</path>
+        <!-- 下面有不同的视图，component使用中间件,仅传递router-view -->
+        <componentpath>common/MiddleRouterView</componentpath>
+        <meta></meta>
+        <viewtype>[
+            {"path":"stock/warehouse","componentpath":"stock/warehouse/list"}, 
+            {"path":"stock/warehouse/form/:id","componentpath":"stock/warehouse/form"},
+            {"path":"stock/warehouse/detail/:id","componentpath":"stock/warehouse/detail"}
+        ]</viewtype>
+        <isbackground>true</isbackground>
+    </menu>
+    <menu id="stock_picking">
+        <name>调拨单</name>
+        <parent>stock</parent>
+        <icon>el-icon-menu</icon>
+        <group>stockman</group>
+        <path>stock/picking</path>
+        <!-- 下面有不同的视图，component使用中间件,仅传递router-view -->
+        <componentpath>common/MiddleRouterView</componentpath>
+        <meta></meta>
+        <viewtype>[
+            {"path":"stock/picking","componentpath":"stock/picking/list"}, 
+            {"path":"stock/picking/form/:id","componentpath":"stock/picking/form"},
+            {"path":"stock/picking/detail/:id","componentpath":"stock/picking/detail"}
+        ]</viewtype>
+        <isbackground>true</isbackground>
+    </menu>
+    <menu id="stock_quant">
+        <name>仓库估值</name>
+        <parent>stock</parent>
+        <icon>el-icon-menu</icon>
+        <group>stockman</group>
+        <path>stock/quant</path>
+        <!-- 下面有不同的视图，component使用中间件,仅传递router-view -->
+        <componentpath>common/MiddleRouterView</componentpath>
+        <meta></meta>
+        <viewtype>[
+            {"path":"stock/quant","componentpath":"stock/quant/list"}, 
+            {"path":"stock/quant/form/:id","componentpath":"stock/quant/form"},
+            {"path":"stock/quant/detail/:id","componentpath":"stock/quant/detail"}
+        ]</viewtype>
+        <isbackground>true</isbackground>
+    </menu>
+     
+</Menus>

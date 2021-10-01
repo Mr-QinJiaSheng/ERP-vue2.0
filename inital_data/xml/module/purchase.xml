@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Modules>
+    <module id="purchase_order">
+        <name>PurchaseOrder</name>
+        <description>采购订单</description>
+        <category>purchase</category>
+    </module>
+    <module id="purchase_order_line">
+        <name>PurchaseOrderLine</name>
+        <description>采购订单明细</description>
+        <category>purchase</category>
+    </module>
+</Modules>
